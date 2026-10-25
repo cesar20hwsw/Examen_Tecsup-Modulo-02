@@ -1,0 +1,269 @@
+#header {
+    width: 90%;
+    max-width: 1216px;
+    margin: 0 auto;
+    padding: 40px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    >img {
+        height: 40px;
+    }
+}
+
+option {
+    background-color: var(--neutral-800);
+}
+
+main {
+    width: 90%;
+    max-width: 1216px;
+    margin: 0 auto;
+    padding-bottom: 80px;
+}
+
+h1 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 52px;
+    text-align: center;
+    margin: 16px 0 64px;
+}
+
+#filters {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+
+    #inputCiudad {
+        width: 526px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 0 24px;
+        border-radius: 12px;
+        background-color: var(--neutral-800);
+
+        &:hover {
+            background-color: var(--neutral-700);
+        }
+
+        input {
+            width: 100%;
+            padding: 16px 0;
+            border: 0;
+            outline: 0;
+            background-color: transparent;
+            font-size: 20px;
+        }
+    }
+
+    #btnBuscar {
+        padding: 16px 24px;
+        border: 0;
+        border-radius: 12px;
+        background-color: var(--blue-500);
+        font-size: 20px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: var(--blue-700);
+        }
+    }
+}
+
+#inputCiudad:focus-within,
+#btnBuscar:focus,
+select:focus {
+    outline: 2px solid var(--neutral-0);
+    outline-offset: 3px;
+}
+
+#mensaje {
+    margin: 32px 0;
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+}
+
+#clima {
+    display: grid;
+    grid-template-columns: 1fr 384px;
+    gap: 32px;
+}
+
+h3 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+#hoy {
+    min-height: 286px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+    border-radius: 20px;
+    background-image: url('../assets/images/bg-today-large.svg');
+    background-size: cover;
+
+    h2 {
+        font-size: 28px;
+        margin-bottom: 12px;
+    }
+
+    #fecha {
+        color: var(--neutral-200);
+    }
+
+    #temperaturaHoy {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        img {
+            width: 120px;
+        }
+    }
+
+    #temperatura {
+        font-size: 80px;
+        font-weight: 600;
+        font-style: italic;
+    }
+}
+
+#detalles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 24px;
+    margin: 32px 0 48px;
+
+    .detalle {
+        padding: 20px;
+        border: 1px solid var(--neutral-600);
+        border-radius: 12px;
+        background-color: var(--neutral-800);
+
+        p {
+            color: var(--neutral-200);
+        }
+
+        .valor {
+            margin-top: 24px;
+            font-size: 32px;
+            font-weight: 300;
+            color: var(--neutral-0);
+        }
+    }
+}
+
+#dias {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.dia {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 10px;
+    border: 1px solid var(--neutral-600);
+    border-radius: 12px;
+    background-color: var(--neutral-800);
+
+    img {
+        width: 60px;
+    }
+
+    .temperaturas {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        font-size: 16px;
+    }
+}
+
+#horas {
+    align-self: start;
+    padding: 24px;
+    border-radius: 20px;
+    background-color: var(--neutral-800);
+
+    #cabeceraHoras {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 16px;
+
+        select {
+            padding: 8px 16px;
+            border: 0;
+            border-radius: 8px;
+            background-color: var(--neutral-600);
+            font-size: 16px;
+            cursor: pointer;
+        }
+    }
+
+    #listaHoras {
+        max-height: 600px;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+}
+
+.hora {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px 10px 12px;
+    border: 1px solid var(--neutral-600);
+    border-radius: 8px;
+    background-color: var(--neutral-700);
+
+    img {
+        width: 40px;
+    }
+
+    .nombreHora {
+        width: 100%;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 1024px) {
+    #clima {
+        grid-template-columns: 1fr;
+    }
+
+    #filters {
+        flex-direction: column;
+
+        #inputCiudad {
+            width: 100%;
+        }
+    }
+
+    #hoy {
+        flex-direction: column;
+        justify-content: center;
+        gap: 16px;
+        padding: 40px 24px;
+        text-align: center;
+        background-image: url('../assets/images/bg-today-small.svg');
+
+        #temperaturaHoy img {
+            width: 80px;
+        }
+
+        #temperatura {
+            font-size: 64px;
+        }
+    }
+}
